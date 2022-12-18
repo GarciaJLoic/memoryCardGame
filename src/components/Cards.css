@@ -2,30 +2,25 @@
   width: 80px;
   height: 80px;
 }
-.cardRecto {
-  background-color: yellow;
-  position: absolute;
-  width: 84px;
-  height: 84px;
-  transform: rotateY(180deg);
-  backface-visibility: hidden;
-}
-.card .cardRectoActiv {
-  transform: rotateY(0deg);
-  transition: transform 1s ease-out;
-}
+.cardRecto,
 .cardVerso {
-  background-color: blue;
+  position: absolute;
   width: 84px;
   height: 84px;
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: rotateY(0deg);
   backface-visibility: hidden;
+  transition: transform 0.7s ease-out;
 }
 
-.card .cardVersoActiv {
+.cardRecto {
+  background-color: yellow;
   transform: rotateY(180deg);
-  transition: transform 1s ease-out;
+}
+.cardVerso {
+  background-color: blue;
+}
+.card .cardRectoActiv {
+  transform: rotateY(0deg);
 }
