@@ -24,3 +24,11 @@
 .card .cardRectoActiv {
   transform: rotateY(0deg);
 }
+
+.card .cardActivDef {
+  transform: rotateY(0deg);
+}
+
+.disable {
+  pointer-events: none;
+}
