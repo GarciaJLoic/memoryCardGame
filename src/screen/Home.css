@@ -1,0 +1,15 @@
+.gameContainer {
+  width: 550px;
+  height: 650px;
+  background-color: aliceblue;
+  border-radius: 0.6em;
+  box-shadow: 0 0.9em 2.8em rgb(86, 66, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+.hide {
+  display: none;
+}

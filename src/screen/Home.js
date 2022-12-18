@@ -1,10 +1,16 @@
+import BlockCounter from "../components/BlockCounter";
+import BlockCards from "../components/BlockCards";
 import ButtonGame from "../components/ButtonGame";
-import GameContainer from "../components/GameContainer";
+import "./Home.css";
 const Home = () => {
   return (
     <>
       <ButtonGame text="Start" hide="hide" />
-      <GameContainer />
+      <div className="gameContainer">
+        <BlockCounter />
+        <BlockCards />
+        <ButtonGame text="Stop" />
+      </div>
     </>
   );
 };
