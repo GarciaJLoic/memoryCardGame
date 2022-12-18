@@ -1,0 +1,11 @@
+.buttonGame {
+  width: 220px;
+  height: 70px;
+  font-size: 1.6em;
+  border-radius: 0.6em;
+  box-shadow: 0 0.9em 2.8em rgb(86, 66, 0, 0.2);
+}
+
+.hide {
+  display: none;
+}
