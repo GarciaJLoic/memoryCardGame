@@ -2,29 +2,28 @@ import "./Cards.css";
 
 let cardReturn = 0;
 let card1, card2;
+
 const Cards = (props) => {
+  const classToggle = (classOrigin, toggleClass) => {
+    [...document.querySelectorAll(classOrigin)].map((e) => {
+      return e.classList.toggle(toggleClass);
+    });
+  };
   const checkDouble = () => {
-    console.log(card1, "--", card2);
     if (card1 === card2) {
-      [...document.querySelectorAll(".cardRectoActiv")].map((e) => {
-        e.classList.toggle("cardActivDef");
-        e.classList.toggle("cardRectoActiv");
-      });
+      classToggle(".cardRectoActiv", "cardActivDef");
+      classToggle(".cardRectoActiv", "cardRectoActiv");
     } else {
-      [...document.querySelectorAll(".cardRectoActiv")].map((e) => {
-        e.classList.toggle("cardRectoActiv");
-      });
+      classToggle(".cardRectoActiv", "cardRectoActiv");
     }
   };
+
   const returnCard = (e) => {
     e.target.nextSibling.classList.toggle("cardRectoActiv");
-    [...document.querySelectorAll(".cardVerso")].map((e) => {
-      e.classList.toggle("disable");
-    });
+    classToggle(".cardVerso", "disable");
+
     setTimeout(() => {
-      [...document.querySelectorAll(".cardVerso")].map((e) => {
-        e.classList.toggle("disable");
-      });
+      classToggle(".cardVerso", "disable");
     }, 700);
     cardReturn++;
     if (cardReturn === 1) {
@@ -33,6 +32,7 @@ const Cards = (props) => {
     if (cardReturn === 2) {
       card2 = props.name;
       cardReturn = 0;
+      props.setMove(props.move + 1);
       setTimeout(checkDouble, 1000);
     }
   };
@@ -42,7 +42,7 @@ const Cards = (props) => {
         ?
       </div>
       <div className="cardRecto">
-        <img src={props.url} />
+        <img src={props.url} alt={props.name} />
       </div>
     </div>
   );

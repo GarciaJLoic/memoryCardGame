@@ -2,3 +2,6 @@
   align-self: end;
   margin: 0px 55px 0px;
 }
+#timeCounter {
+  width: 120px;
+}
