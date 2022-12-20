@@ -9,3 +9,7 @@
 .hide {
   display: none;
 }
+.abs {
+  position: absolute;
+  z-index: 8000;
+}

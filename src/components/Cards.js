@@ -1,6 +1,7 @@
 import "./Cards.css";
 
 let cardReturn = 0;
+let cardValid = 0;
 let card1, card2;
 
 const Cards = (props) => {
@@ -13,6 +14,12 @@ const Cards = (props) => {
     if (card1 === card2) {
       classToggle(".cardRectoActiv", "cardActivDef");
       classToggle(".cardRectoActiv", "cardRectoActiv");
+
+      cardValid += 2;
+      if (cardValid === 2) {
+        props.setEnd();
+        cardValid = 0;
+      }
     } else {
       classToggle(".cardRectoActiv", "cardRectoActiv");
     }
@@ -21,7 +28,6 @@ const Cards = (props) => {
   const returnCard = (e) => {
     e.target.nextSibling.classList.toggle("cardRectoActiv");
     classToggle(".cardVerso", "disable");
-
     setTimeout(() => {
       classToggle(".cardVerso", "disable");
     }, 700);
@@ -32,7 +38,7 @@ const Cards = (props) => {
     if (cardReturn === 2) {
       card2 = props.name;
       cardReturn = 0;
-      props.setMove(props.move + 1);
+      props.setMove((count) => props.move + 1);
       setTimeout(checkDouble, 1000);
     }
   };
